@@ -1,9 +1,9 @@
 /* eslint-disable */
 
 const aboutDummyData = {
-    name: 'Computer Vision Annotation Tool',
+    name: 'Creatives Videowiki',
     description:
-        'CVAT is completely re-designed and re-implemented version of Video Annotation Tool from Irvine, California tool. It is free, online, interactive video and image annotation tool for computer vision. It is being used by our team to annotate million of objects with different properties. Many UI and UX decisions are based on feedbacks from professional data annotation team.',
+        'VideoWiki CREATIVES as a project brings a decentralized approach to content ownership and sharing. This current project is scoped to create a data union of video and image stock media which will be annotated in a AI readable format.',
     version: '0.5.dev20190516142240',
 };
 

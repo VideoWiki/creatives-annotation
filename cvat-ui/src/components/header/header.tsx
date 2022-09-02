@@ -10,12 +10,9 @@ import { useHistory, useLocation } from 'react-router';
 import { Row, Col } from 'antd/lib/grid';
 import Icon, {
     SettingOutlined,
-    InfoCircleOutlined,
     EditOutlined,
     LoadingOutlined,
     LogoutOutlined,
-    GithubOutlined,
-    QuestionCircleOutlined,
     CaretDownOutlined,
     ControlOutlined,
     UserOutlined,
@@ -35,7 +32,6 @@ import consts from 'consts';
 
 import { CVATLogo } from 'icons';
 import ChangePasswordDialog from 'components/change-password-modal/change-password-modal';
-import CVATTooltip from 'components/common/cvat-tooltip';
 import { switchSettingsDialog as switchSettingsDialogAction } from 'actions/settings-actions';
 import { logoutAsync, authActions } from 'actions/auth-actions';
 import { CombinedState } from 'reducers';
@@ -164,7 +160,7 @@ function HeaderContainer(props: Props): JSX.Element {
     } = props;
 
     const {
-        CHANGELOG_URL, LICENSE_URL, GITTER_URL, GITHUB_URL, GUIDE_URL, DISCORD_URL,
+        CHANGELOG_URL, LICENSE_URL, GITTER_URL, DISCORD_URL,
     } = consts;
 
     const history = useHistory();
@@ -346,9 +342,6 @@ function HeaderContainer(props: Props): JSX.Element {
             >
                 Settings
             </Menu.Item>
-            <Menu.Item icon={<InfoCircleOutlined />} key='about' onClick={() => showAboutModal()}>
-                About
-            </Menu.Item>
             {renderChangePasswordItem && (
                 <Menu.Item
                     key='change_password'
@@ -382,6 +375,7 @@ function HeaderContainer(props: Props): JSX.Element {
         <Layout.Header className='cvat-header'>
             <div className='cvat-left-header'>
                 <Icon className='cvat-logo-icon' component={CVATLogo} />
+                <span className='logoText'>VideoWiki </span>
                 <Button
                     className={getButtonClassName('projects')}
                     type='link'
@@ -461,36 +455,6 @@ function HeaderContainer(props: Props): JSX.Element {
                 ) : null}
             </div>
             <div className='cvat-right-header'>
-                <CVATTooltip overlay='Click to open repository'>
-                    <Button
-                        icon={<GithubOutlined />}
-                        size='large'
-                        className='cvat-header-button'
-                        type='link'
-                        href={GITHUB_URL}
-                        onClick={(event: React.MouseEvent): void => {
-                            event.preventDefault();
-                            // false alarm
-                            // eslint-disable-next-line security/detect-non-literal-fs-filename
-                            window.open(GITHUB_URL, '_blank');
-                        }}
-                    />
-                </CVATTooltip>
-                <CVATTooltip overlay='Click to open guide'>
-                    <Button
-                        icon={<QuestionCircleOutlined />}
-                        size='large'
-                        className='cvat-header-button'
-                        type='link'
-                        href={GUIDE_URL}
-                        onClick={(event: React.MouseEvent): void => {
-                            event.preventDefault();
-                            // false alarm
-                            // eslint-disable-next-line security/detect-non-literal-fs-filename
-                            window.open(GUIDE_URL, '_blank');
-                        }}
-                    />
-                </CVATTooltip>
                 <Dropdown placement='bottomRight' overlay={userMenu} className='cvat-header-menu-user-dropdown'>
                     <span>
                         <UserOutlined className='cvat-header-dropdown-icon' />

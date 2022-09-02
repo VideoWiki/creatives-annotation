@@ -5,7 +5,7 @@
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
-import { MoreOutlined, QuestionCircleOutlined } from '@ant-design/icons';
+import { MoreOutlined } from '@ant-design/icons';
 import Card from 'antd/lib/card';
 import Meta from 'antd/lib/card/Meta';
 import Paragraph from 'antd/lib/typography/Paragraph';
@@ -18,7 +18,6 @@ import moment from 'moment';
 
 import { CloudStorage, CombinedState } from 'reducers';
 import { deleteCloudStorageAsync } from 'actions/cloud-storage-actions';
-import CVATTooltip from 'components/common/cvat-tooltip';
 import Status from './cloud-storage-status';
 import Preview from './cloud-storage-preview';
 
@@ -75,11 +74,7 @@ export default function CloudStorageItemComponent(props: Props): JSX.Element {
             cover={(
                 <>
                     <Preview cloudStorage={cloudStorage} />
-                    {description ? (
-                        <CVATTooltip overlay={description}>
-                            <QuestionCircleOutlined className='cvat-cloud-storage-description-icon' />
-                        </CVATTooltip>
-                    ) : null}
+                    {description ? null : null}
                 </>
             )}
             size='small'

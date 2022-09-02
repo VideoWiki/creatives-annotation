@@ -97,15 +97,11 @@ class ServerViewSet(viewsets.ViewSet):
     def about(request):
         from cvat import __version__ as cvat_version
         about = {
-            "name": "Computer Vision Annotation Tool",
+            "name": "VideoWiki Data Union",
             "version": cvat_version,
-            "description": "CVAT is completely re-designed and re-implemented " +
-                "version of Video Annotation Tool from Irvine, California " +
-                "tool. It is free, online, interactive video and image annotation " +
-                "tool for computer vision. It is being used by our team to " +
-                "annotate million of objects with different properties. Many UI " +
-                "and UX decisions are based on feedbacks from professional data " +
-                "annotation team."
+            "description": "VideoWiki CREATIVES as a project brings a decentralized approach to content ownership and sharing." +
+            " It uses a customized Ocean marketplace to provide educators, researchers (content providers)." +
+            "This current project is scoped to create a data union of video and image stock media which will be annotated in a AI readable format."
         }
         serializer = AboutSerializer(data=about)
         if serializer.is_valid(raise_exception=True):

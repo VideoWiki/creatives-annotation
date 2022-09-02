@@ -46,7 +46,7 @@ function LoginPageComponent(props: LoginPageComponentProps & RouteComponentProps
                         <Row justify='start' align='top'>
                             <Col>
                                 <Text strong>
-                                    New to CVAT? Create
+                                    New to Videowiki ? Create
                                     <Link to='/auth/register'> an account</Link>
                                 </Text>
                             </Col>
