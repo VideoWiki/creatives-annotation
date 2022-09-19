@@ -1,0 +1,31 @@
+{
+  "name": "decentralizedstorageforvideowiki",
+  "version": "1.0.0",
+  "description": "API For decentralized storage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mirmit/DecentralizedStorageForVideoWiki.git"
+  },
+  "author": "Mirmit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mirmit/DecentralizedStorageForVideoWiki/issues"
+  },
+  "homepage": "https://github.com/Mirmit/DecentralizedStorageForVideoWiki#readme",
+  "dependencies": {
+    "@ethersphere/bee-js": "^4.1.1",
+    "compression": "^1.7.4",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "helmet": "^5.1.1"
+  },
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
